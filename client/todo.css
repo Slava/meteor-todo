@@ -1,0 +1,67 @@
+body {
+	background-size: 50px 50px;
+	background-color: #ac0;
+	background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -ms-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+	behavior: url(/PIE.htc);
+}
+
+.tasks {
+	border: 3px solid #383838;
+	border-radius: 15px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	padding: 20px;
+	background-color: white;
+}
+
+.task>.creator {
+	float: right;
+	font-size: small;
+	font-style: italic;
+}
+
+.checkmark {
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 20px;
+	color: black;
+	text-shadow: 0 1px 0 white;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+}
+
+.checkmark:hover {
+	color: #006400;
+	opacity: 1;
+	cursor: pointer;
+}
+
+.checkmark.done {
+	color: #006400;
+	opacity: 1;
+}
+
+.checkmark.done:hover {
+	color: black;
+	opacity: 0.2;
+}
+
+.search {
+	text-align: right;
+	margin-bottom: 40px;
+}
