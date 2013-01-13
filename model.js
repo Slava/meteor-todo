@@ -14,11 +14,11 @@ Tasks.allow({
 
 Meteor.methods({
 	createTask: function(options) {
-		Tasks.insert(
+		return Tasks.insert(
 			{
 				title: options.title,
 				description: options.description,
-				creator: 'armansu',
+				creator: options.creator,
 				done: false
 			});
 	}

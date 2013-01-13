@@ -16,10 +16,9 @@
         <h1>Collections TODOs</h1>
 
         <div class="input-append">
-            <form class="search" onsubmit="return false;">
-                <input type="text" class="searchbox" placeholder="type here" value={{search_query}}>
-                <input type="submit" class="btn go_search">Search</input>
-            </form>
+            <div class="search">
+                <input type="text" class="search_box" placeholder="Search for task title" id="search_query">
+            </div>
         </div>
         <div class="input-append">
             <a class="btn add_task">Add task</a>
@@ -66,10 +65,10 @@
       {{/if}}
 
       <label>Title</label>
-      <input type="text" class="title span5">
+      <input type="text" class="title span5" id="add_title">
 
       <label>Description</label>
-      <textarea class="description span5"></textarea>
+      <textarea class="description span5" id="add_desc"></textarea>
    </div>
 
     <div class="modal-footer">

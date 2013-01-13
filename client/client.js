@@ -2,10 +2,10 @@ Meteor.autosubscribe(function() {
     Meteor.subscribe('tasks');
 });
 
-Session.set('search_query', '');
 Session.set('done_object', { $lte: true});
 Session.set('hide_finished', false);
 Session.set('showCreateDialog', false);
+Session.set('search_query', $('.search_box').val());
 
 Template.page.hide_finished = function() {
     if (Session.get('hide_finished'))
@@ -25,10 +25,6 @@ Template.page.showCreateDialog = function () {
   return Boolean(Session.get("showCreateDialog"));
 };
 
-Template.page.search_query = function() {
-    return Session.get('search_query');
-};
-
 Template.task.events({
     'click .checkmark': function() {
         Tasks.update({_id: this._id}, {$set: {done: !this.done}});
@@ -42,9 +38,8 @@ Template.task.events({
 });
 
 Template.page.events({
-    'click .go_search': function() {
-        Session.set('search_query', $('.searchbox').val());
-        Meteor.flush();
+    'keyup .search_box': function() {
+        Session.set('search_query', $('.search_box').val());
     },
     'click .add_task': function() {
         Session.set("showCreateDialog", true);
@@ -75,7 +70,7 @@ Template.createDialog.events({
         Meteor.call('createTask', {
             title: title,
             description: description,
-            creator: user
+            creator: 'unknown'
         });
         Session.set("showCreateDialog", false);
         Session.set("createError", null);
