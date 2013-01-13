@@ -1,3 +1,5 @@
+// Actual logic
+
 Meteor.autosubscribe(function() {
     Meteor.subscribe('tasks');
 });
@@ -70,7 +72,7 @@ Template.createDialog.events({
         Meteor.call('createTask', {
             title: title,
             description: description,
-            creator: 'unknown'
+            creator: Meteor.user() ? Meteor.user().profile.name : 'Stranger'
         });
         Session.set("showCreateDialog", false);
         Session.set("createError", null);
@@ -82,4 +84,9 @@ Template.createDialog.events({
   'click .cancel': function () {
     Session.set("showCreateDialog", false);
   }
+});
+
+// Some css style tweeks for loginButtons
+$(function() {
+    $('.login-button').addClass('btn');
 });

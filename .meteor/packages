@@ -7,5 +7,6 @@ insecure
 preserve-inputs
 bootstrap
 accounts-base
+accounts-ui-unstyled
+accounts-facebook
 accounts-ui
-accounts-github
